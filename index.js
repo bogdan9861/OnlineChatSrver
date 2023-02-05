@@ -48,6 +48,8 @@ io.on('connection', (socket) => {
         if (user) {
             io.to(user.room).emit('message', { data: { user, message } })
         }
+
+        window.scrollTo(0, document.body.scrollHeight);
     })
 
     socket.on('leftRoom', ({ params }) => {
